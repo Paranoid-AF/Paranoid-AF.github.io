@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="x-ua-Compatible" content="ie=edge">
+
+  <title>生活 | 豆渣磨坊</title>
+  <meta name="description" content="生活体验。">
+  <link rel="alternate" type="application/rss&#43;xml" href="/categories/%E7%94%9F%E6%B4%BB/index.xml" title="豆渣磨坊">
+
+  <link rel="stylesheet" href="/main.min.f0a94839c66bc3be4d2efcff7fa1cd301a435697eab9927fe1f8934f2497b558f48a207f3709320618004c17e400ecb7a868f98f04d958643e7c293c099eac36.css" integrity="sha512-8KlIOcZrw75NLvz/f6HNMBpDVpfquZJ/4fiTTySXtVj0iiB/NwkyBhgATBfkAOy3qGj5jwTZWGQ&#43;fCk8CZ6sNg==">
+</head>
+
+<body>
+  
+<nav class="nav">
+
+  <div class="nav__description">
+    <h1>豆渣磨坊</h1>
+    <p>生活体验。</p></div>
+  <div class="nav__scroll-down">
+    <img src="icons/angle_down.svg">
+  </div>
+  <div class="nav__content container metadata">
+    <div class="nav__home">
+      <a href="/" >豆渣磨坊</a>
+    </div>
+  </div>
+</nav>
+  <main>
+  <section class="list">
+  
+<header class="header header--main">
+
+
+  
+  
+  
+  <figure class="banner"><img src="/banner.jpg" alt="Header banner of &#39;&#39;" />
+</figure>
+
+  
+  <div class="container">
+    <div class="header__metadata inline-list">
+      
+  
+      <div class="header__categories">
+      </div>
+    </div>
+  
+    <h1 class="header__title">生活</h1>
+  </div>
+</header>
+
+  <div class="container">
+    <div class="content">
+      <article class="summary">
+  <header class="header">
+  <figure class="banner"><a href="/posts/new-world/"><img src="/posts/new-world/banner.jpg" alt="Header banner of &#39;新的世界&#39;" /></a>
+</figure>
+
+
+    <div class="header__metadata inline-list">
+      <time datetime='2020-12-06 22:57:12 &#43;0800 &#43;0800' class="metadata datetime">2020年12月6日</time>
+
+      <div class="header__categories">
+  <ul class="metadata inline-list">
+  </ul>
+      </div>
+    </div>
+
+    <h2 class="header__title">
+      <a href="/posts/new-world/">新的世界</a>
+    </h2>
+  </header>
+  <div class="summary__content">所以，我决定重新开始——一个博客。</div>
+</article>
+
+    </div>
+
+    <footer class="footer metadata">
+      
+
+
+    </footer>
+  </div>
+</section>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var navHomepage = document.querySelector('nav.nav.nav__homepage')
+      var headerHomepage = document.querySelector('header.header.header--main.header__homepage')
+      if(navHomepage !== null) {
+        navHomepage.className = 'nav nav__frontpage'
+      }
+      if(headerHomepage !== null) {
+        headerHomepage.className = 'header header--main header__frontpage'
+      }
+    })
+  </script>
+
+</main>
+  
+<footer class="footer footer--main container metadata">&copy; 2020 Paranoid_AF. <a href='/'>豆渣磨坊</a></footer>
+<script>
+  function updateCover(transitionProgress) {
+    if(transitionProgress < 0) {
+      transitionProgress = 0
+    }
+    if(transitionProgress > 1) {
+      transitionProgress = 1
+    }
+    var header = document.querySelector('header.header.header--main.header__frontpage')
+    var nav = document.querySelector('nav.nav.nav__frontpage')
+    if(header && nav) {
+      var banner =  header.querySelector('figure.banner img')
+      if(banner) {
+        banner.style.filter = 'blur(' + (80 * transitionProgress).toString() + 'px)'
+      }
+      if(nav) {
+        var desc = nav.querySelector('.nav__description')
+        var navLinks = nav.querySelector('.nav__content.container.metadata')
+        if(desc) {
+          desc.style.opacity = (1 - transitionProgress).toString()
+        }
+        if(navLinks) {
+          navLinks.style.opacity = (transitionProgress).toString()
+        }
+      }
+    }
+  }
+  window.addEventListener('scroll', function() {
+    var navLinks = document.querySelector('nav.nav.nav__frontpage > .nav__content.container.metadata')
+    var scrollIcon = document.querySelector('nav.nav.nav__frontpage > .nav__scroll-down')
+    var vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    if(navLinks) {
+      updateCover(window.scrollY / (vh - navLinks.offsetHeight))
+    } else {
+      updateCover(window.scrollY / vh)
+    }
+    if(scrollIcon) {
+      if(window.scrollY > 0) {
+        scrollIcon.style.filter = 'opacity(0)'
+      } else {
+        scrollIcon.style.filter = 'opacity(100%)'
+      }
+    }
+  })
+  window.addEventListener('DOMContentLoaded', function() {
+    updateCover(0)
+  })
+</script>
+</body>
+</html>
