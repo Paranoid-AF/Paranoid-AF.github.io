@@ -9,7 +9,7 @@
   <meta name="description" content="生活体验。">
   <link rel="alternate" type="application/rss&#43;xml" href="/categories/%E7%94%9F%E6%B4%BB/index.xml" title="豆渣磨坊">
 
-  <link rel="stylesheet" href="/main.min.f0a94839c66bc3be4d2efcff7fa1cd301a435697eab9927fe1f8934f2497b558f48a207f3709320618004c17e400ecb7a868f98f04d958643e7c293c099eac36.css" integrity="sha512-8KlIOcZrw75NLvz/f6HNMBpDVpfquZJ/4fiTTySXtVj0iiB/NwkyBhgATBfkAOy3qGj5jwTZWGQ&#43;fCk8CZ6sNg==">
+  <link rel="stylesheet" href="/main.min.cabc7806a05a4f131ee70fa654d4e2c7c34f50b9c72e65d8f121bee9ff44b33c64846d497df9b5b09efc11d239e44c03caa9da8489d9b55d94b671f62b6afefb.css" integrity="sha512-yrx4BqBaTxMe5w&#43;mVNTix8NPULnHLmXY8SG&#43;6f9EszxkhG1Jffm1sJ78EdI55EwDyqnahInZtV2UtnH2K2r&#43;&#43;w==">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
   
   
   
-  <figure class="banner"><img src="/banner.jpg" alt="Header banner of &#39;&#39;" />
+  <figure class="banner" style="background-image: url(/banner.jpg);">
 </figure>
 
   
@@ -57,7 +57,7 @@
     <div class="content">
       <article class="summary">
   <header class="header">
-  <figure class="banner"><a href="/posts/new-world/"><img src="/posts/new-world/banner.jpg" alt="Header banner of &#39;新的世界&#39;" /></a>
+  <figure class="banner" style="background-image: url(/posts/new-world/banner.jpg);"><a href="/posts/new-world/"></a>
 </figure>
 
 
@@ -114,9 +114,10 @@
     var header = document.querySelector('header.header.header--main.header__frontpage')
     var nav = document.querySelector('nav.nav.nav__frontpage')
     if(header && nav) {
-      var banner =  header.querySelector('figure.banner img')
-      if(banner) {
-        banner.style.filter = 'blur(' + (80 * transitionProgress).toString() + 'px)'
+      var banner =  header.querySelector('figure.banner')
+      var newBlur = 'blur(' + (80 * transitionProgress).toFixed(1).toString() + 'px)'
+      if(banner && banner.style.filter !== newBlur) {
+        banner.style.filter = newBlur
       }
       if(nav) {
         var desc = nav.querySelector('.nav__description')
