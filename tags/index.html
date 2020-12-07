@@ -9,7 +9,7 @@
   <meta name="description" content="生活体验。">
   <link rel="alternate" type="application/rss&#43;xml" href="/tags/index.xml" title="豆渣磨坊">
 
-  <link rel="stylesheet" href="/main.min.ca87985b3a610e6b30b64681abad573c06b900a37c0100bd8c8a9e2eb1e345a1dd1978830244b4a94c4b1d165716564e14dc08d30c8cd616441653eedfd51956.css" integrity="sha512-yoeYWzphDmswtkaBq61XPAa5AKN8AQC9jIqeLrHjRaHdGXiDAkS0qUxLHRZXFlZOFNwI0wyM1hZEFlPu39UZVg==">
+  <link rel="stylesheet" href="/main.min.5dac8c8f37759b5700b4e8c0e1e8582cb015d2a20d19cc23a5ad71fc8d476a1e47ca503404b5864f7593c0abc2dd1adbd50ab6a186befcb1bdf906599af5860e.css" integrity="sha512-XayMjzd1m1cAtOjA4ehYLLAV0qINGcwjpa1x/I1Hah5HylA0BLWGT3WTwKvC3Rrb1Qq2oYa&#43;/LG9&#43;QZZmvWGDg==">
 </head>
 
 <body>
@@ -61,6 +61,8 @@
   
 <footer class="footer footer--main container metadata">&copy; 2020 Paranoid_AF. <a href='/'>豆渣磨坊</a></footer>
 <script>
+  (function() {
+
   function updateCover(transitionProgress) {
     if(transitionProgress < 0) {
       transitionProgress = 0
@@ -70,33 +72,37 @@
     }
     var header = document.querySelector('header.header.header--main.header__frontpage')
     var nav = document.querySelector('nav.nav.nav__frontpage')
-    if(header && nav) {
-      var banner =  header.querySelector('figure.banner')
-      var newBlur = 'blur(' + (80 * transitionProgress).toFixed(1).toString() + 'px)'
-      if(banner && banner.style.filter !== newBlur) {
-        banner.style.filter = newBlur
+    if(nav) {
+      var desc = nav.querySelector('.nav__description')
+      var navLinks = nav.querySelector('.nav__content.container.metadata')
+      if(desc) {
+        desc.style.opacity = (1 - transitionProgress).toString()
       }
-      if(nav) {
-        var desc = nav.querySelector('.nav__description')
-        var navLinks = nav.querySelector('.nav__content.container.metadata')
-        if(desc) {
-          desc.style.opacity = (1 - transitionProgress).toString()
-        }
-        if(navLinks) {
-          navLinks.style.opacity = (transitionProgress).toString()
-        }
+      if(navLinks) {
+        navLinks.style.opacity = (transitionProgress).toString()
+      }
+    }
+    var currentUpdate = new Date()
+    if(updateTimeout) {
+        window.clearTimeout(updateTimeout)
+    }
+    if(currentUpdate - previousUpdate < 300) {
+      updateTimeout = window.setTimeout(onScroll, 300)
+      return
+    } else {
+      previousUpdate = currentUpdate
+    }
+    if(header) {
+      var banner =  header.querySelector('figure.banner')
+      if(banner) {
+        banner.style.filter = 'blur(' + (80 * transitionProgress).toFixed(1).toString() + 'px)'
       }
     }
   }
-  window.addEventListener('scroll', function() {
-    var navLinks = document.querySelector('nav.nav.nav__frontpage > .nav__content.container.metadata')
+  var previousUpdate = new Date()
+  var updateTimeout = null
+  function onScroll() {
     var scrollIcon = document.querySelector('nav.nav.nav__frontpage > .nav__scroll-down')
-    var vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-    if(navLinks) {
-      updateCover(window.scrollY / (vh - navLinks.offsetHeight))
-    } else {
-      updateCover(window.scrollY / vh)
-    }
     if(scrollIcon) {
       if(window.scrollY > 0) {
         scrollIcon.style.filter = 'opacity(0)'
@@ -104,10 +110,20 @@
         scrollIcon.style.filter = 'opacity(100%)'
       }
     }
-  })
+    var navLinks = document.querySelector('nav.nav.nav__frontpage > .nav__content.container.metadata')
+    var vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    if(navLinks) {
+      updateCover(window.scrollY / (vh - navLinks.offsetHeight))
+    } else {
+      updateCover(window.scrollY / vh)
+    }
+  }
+  window.addEventListener('scroll', onScroll)
   window.addEventListener('DOMContentLoaded', function() {
     updateCover(0)
   })
+
+  })()
 </script>
 </body>
 </html>
