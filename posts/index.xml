@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 豆渣磨坊</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 06 Dec 2020 22:57:12 +0800</lastBuildDate><atom:link href="https://soydev.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Dec 2020 19:06:24 +0800</lastBuildDate><atom:link href="https://soydev.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面包树</title>
+      <link>https://soydev.me/posts/breadfruit-and-baobab/</link>
+      <pubDate>Tue, 08 Dec 2020 19:06:24 +0800</pubDate>
+      
+      <guid>https://soydev.me/posts/breadfruit-and-baobab/</guid>
+      <description>关于他们说的、我想要的和我得到的。</description>
+    </item>
+    
     <item>
       <title>新的世界</title>
       <link>https://soydev.me/posts/new-world/</link>

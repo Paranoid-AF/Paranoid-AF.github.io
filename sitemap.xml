@@ -4,18 +4,38 @@
   
   <url>
     <loc>https://soydev.me/</loc>
-    <lastmod>2020-12-06T22:57:12+08:00</lastmod>
+    <lastmod>2020-12-08T19:06:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://soydev.me/categories/</loc>
-    <lastmod>2020-12-06T22:57:12+08:00</lastmod>
+    <lastmod>2020-12-08T19:06:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://soydev.me/tags/poetry/</loc>
+    <lastmod>2020-12-08T19:06:24+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://soydev.me/posts/</loc>
-    <lastmod>2020-12-06T22:57:12+08:00</lastmod>
+    <lastmod>2020-12-08T19:06:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://soydev.me/tags/</loc>
+    <lastmod>2020-12-08T19:06:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://soydev.me/categories/thoughts/</loc>
+    <lastmod>2020-12-08T19:06:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://soydev.me/posts/breadfruit-and-baobab/</loc>
+    <lastmod>2020-12-08T19:06:24+08:00</lastmod>
   </url>
   
   <url>
@@ -26,10 +46,6 @@
   <url>
     <loc>https://soydev.me/categories/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2020-12-06T22:57:12+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://soydev.me/tags/</loc>
   </url>
   
 </urlset>
